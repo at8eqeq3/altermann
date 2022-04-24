@@ -1,0 +1,43 @@
+// Knorkator — «Alter Mann»
+digraph G {
+  compound=true;
+  label="Knorkator — «Alter Mann»";
+  fontname="FiraSans,sans-serif";
+  node [fontname="FiraSans,sans-serif", shape=hexagon, style=rounded];
+  edge [fontname="FiraSans,sans-serif", arrowhead=vee];
+  "Alter Mann" -> Daniela [label="nicht interessiert" lhead=cluster_s1];
+  "Alter Mann" -> jemand  [label="nicht interessiert" lhead=cluster_s2];
+  subgraph cluster_s1 {
+    margin=32;
+    color=black;
+    label="Strophe 1";
+    Daniela               -> Jonas                   [label="steht auf"];
+    Jonas                 -> Vanessa                 [label="liebt"];
+    Vanessa               -> Lars                    [label="wär gern zusammen"];
+    Lars                  -> Melanie                 [label="findet besser"];
+    Melanie               -> Tim                     [label="steht auf"];
+    Tim                   -> Jennifer                [label="findet cool"];
+    Jennifer              -> Kevin                   [label="verliebt in"];
+    Kevin                 -> {Jonas Lars Tim Tobias} [label="schwul"];
+    Tobias                -> Annika                  [label="scharf auf"];
+    Annika                -> Tobias                  [label="scharf auf"];
+    Annika                -> "Freundin von Annika"   [label="Freundin"];
+    "Freundin von Annika" -> Tobias                  [label="Schwarm"];
+  }
+  subgraph cluster_s2 {
+    margin=32;
+    color=black;
+    label="Strophe 2";
+    Hagen            -> Sebastian        [label="erschießt"];
+    Sven             -> Hagen            [label="überfährt"];
+    Christopher      -> Sven             [label="erwürgt"];
+    Yannik           -> Christopher      [label="erschlagen"];
+    {Björn Jochen}   -> Yannik           [label="ermorden"];
+    Lukas            -> {Björn Jochen}   [label="erledigt"];
+    Benjamin         -> Lukas            [label="macht alle"];
+    Nils             -> Benjamin         [label="erstochen"];
+    {Felix Thorsten} -> Nils             [label="abgemurkst"];
+    Alexander        -> {Thorsten Felix} [label="killt"];
+    jemand           -> Alexander        [label="erschossen"];
+  }
+}
