@@ -3,8 +3,8 @@ digraph G {
   compound=true;
   label="Knorkator — «Alter Mann»";
   fontname="FiraSans,sans-serif";
-  node [fontname="FiraSans,sans-serif", shape=hexagon, style=rounded];
-  edge [fontname="FiraSans,sans-serif", arrowhead=vee];
+  node [fontname="FiraSans,sans-serif" shape=hexagon style=rounded];
+  edge [fontname="FiraSans,sans-serif" arrowhead=vee];
   "Alter Mann" -> Daniela [label="nicht interessiert" lhead=cluster_s1];
   "Alter Mann" -> jemand  [label="nicht interessiert" lhead=cluster_s2];
   subgraph cluster_s1 {
@@ -18,7 +18,7 @@ digraph G {
     Melanie               -> Tim                     [label="steht auf"];
     Tim                   -> Jennifer                [label="findet cool"];
     Jennifer              -> Kevin                   [label="verliebt in"];
-    Kevin                 -> {Jonas Lars Tim Tobias} [label="schwul"];
+    Kevin                 -> {Jonas Lars Tim Tobias} [label="schwul" style="dotted"];
     Tobias                -> Annika                  [label="scharf auf"];
     Annika                -> Tobias                  [label="scharf auf"];
     Annika                -> "Freundin von Annika"   [label="Freundin"];
