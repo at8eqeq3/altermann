@@ -1,4 +1,5 @@
 _minted-altermann/*
+.texlive2022/*
 altermann.aux
 altermann.fdb_latexmk
 altermann.fls

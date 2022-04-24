@@ -14,6 +14,7 @@
   * перекрёстные и внешние ссылки
   * списки иллюстраций, листингов и источников
 * написание `Makefile` для сборки проекта
+* сборка проекта в Docker
 
 ## Сборка
 
@@ -33,4 +34,11 @@ make clean
 dot -Tpng altermann.dot > altermann.png
 pdflatex -shell-escape -interaction=nonstopmode -file-line-error altermann.tex
 pdflatex -shell-escape -interaction=nonstopmode -file-line-error altermann.tex
+~~~
+
+Или с использованием Docker, чтобы не тащить себе весь TexLive:
+
+~~~ bash
+docker build -t mytexlive .
+docker run -it --rm -v ${PWD}:/root  mytexlive
 ~~~
