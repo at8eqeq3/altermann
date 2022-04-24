@@ -1,5 +1,8 @@
 # Alter Mann
 
+![latex](https://github.com/at8eqeq3/altermann/actions/workflows/latex.yml/badge.svg)
+![docker](https://github.com/at8eqeq3/altermann/actions/workflows/docker.yml/badge.svg)
+
 ## Описание
 
 Одним субботним вечером Диме стало скучно, и он решил поупражняться в этих ваших LaTeX'ах и Graphviz'ах, из чего под чашку вискаря родился вот такой шедевр. Шедевр в себя включает:
@@ -15,6 +18,7 @@
   * списки иллюстраций, листингов и источников
 * написание `Makefile` для сборки проекта
 * сборка проекта в Docker
+* сборка на GitHub Actions с использованием приватного экшена и Docker
 
 ## Сборка
 
