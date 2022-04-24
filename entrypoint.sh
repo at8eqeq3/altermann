@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /root
+cd /github/workspace
 make clean
 make all
