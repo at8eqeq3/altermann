@@ -4,6 +4,8 @@ RUN apt-get update && \
     apt-get install -y \
     graphviz 
 
-COPY entrypoint.sh /root
+LABEL me.at8eqeq3.txt.altermann https://github.com/at8eqeq3/altermann
 
-ENTRYPOINT [ "/root/entrypoint.sh" ]
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
