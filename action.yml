@@ -1,0 +1,7 @@
+name: 'Build with TexLive'
+description: "Builds *TeX project with TexLive and Graphviz via Makefile"
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/at8eqeq3/mytexlive:latest'
+  args:
+    - ${{ inputs.who-to-greet }}
