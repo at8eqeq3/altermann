@@ -9,6 +9,7 @@
 
 * забавная [песня](https://music.yandex.ru/album/288035/track/2721518) хорошего музколлектива 
 * социальный граф
+* в изобилии немецкие буквы с умляутами и прочими эсцетами
 * работа с Graphviz, в том числе подграфы и стилизация элементов
 * работа с LaTeX, включая:
   * вёрстку стихов
@@ -19,6 +20,8 @@
 * написание `Makefile` для сборки проекта
 * сборка проекта в Docker
 * сборка на GitHub Actions с использованием приватного экшена и Docker
+  * задание Docker запускается вручную, собирает имидж и кладёт его в реестр
+  * задание Latex запускается по `push` в `master` и собирает PDF с использованием последнего собранного имиджа
 
 ## Сборка
 
@@ -44,5 +47,5 @@ pdflatex -shell-escape -interaction=nonstopmode -file-line-error altermann.tex
 
 ~~~ bash
 docker build -t mytexlive .
-docker run -it --rm -v ${PWD}:/root  mytexlive
+docker run -it --rm -v ${PWD}:/github/workspace  mytexlive
 ~~~
