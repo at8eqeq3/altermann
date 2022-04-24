@@ -8,18 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0
-          bundler-cache: true
-      
-      - name: Build PDF
-        run: make all
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        uses: ./
       - name: Publish PDF
-        run: make clean
-        env:
-          AWS_EC2_METADATA_DISABLED: true
-          AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: altermann.pdf
+          path: altermann.pdf

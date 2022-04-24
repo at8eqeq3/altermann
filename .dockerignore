@@ -1,0 +1,14 @@
+.texlive2022
+action.yml
+altermann.aux
+altermann.dot
+altermann.lof
+altermann.log
+altermann.lol
+altermann.out
+altermann.pdf
+altermann.png
+altermann.tex
+Makefile
+_minted-altermann
+README.md
