@@ -13,7 +13,7 @@ jobs:
       - name: Login to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - name: Build
-        uses: ./
+        uses: docker://ghcr.io/at8eqeq3/altermann:master
       - name: Publish PDF
         uses: actions/upload-artifact@v3
         with:
