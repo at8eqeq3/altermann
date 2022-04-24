@@ -15,7 +15,8 @@ jobs:
       - name: Build
         uses: docker://ghcr.io/at8eqeq3/altermann:master
       - name: Publish PDF
-        uses: actions/upload-artifact@v3
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          name: altermann.pdf
-          path: altermann.pdf
+          files: altermann.pdf
+          body_path: CHANGELOG.md
