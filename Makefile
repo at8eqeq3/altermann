@@ -1,19 +1,20 @@
 TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
 DOT = dot -Tpng
+SRC = altermann
 
 .PHONY: all view
 
-all : altermann.png altermann.pdf
+all : clean $(SRC).pdf
 
 view :
-	xdg-open altermann.pdf
+	xdg-open $(SRC).pdf
 
 clean :
-	rm -f altermann.aux altermann.fdb_latexmk altermann.fls altermann.lof  altermann.log  altermann.lol  altermann.out  altermann.pdf  altermann.png altermann.pyg altermann.synctex.gz
+	rm -f $(SRC).aux $(SRC).fdb_latexmk $(SRC).fls $(SRC).lof  $(SRC).log  $(SRC).lol  $(SRC).out  $(SRC).pdf  $(SRC).png $(SRC).pyg $(SRC).synctex.gz
 
-altermann.png : altermann.dot
-	$(DOT) altermann.dot > altermann.png
+altermann.png : $(SRC).dot
+	$(DOT) $(SRC).dot > $(SRC).png
 
-altermann.pdf : altermann.tex
-	$(TEX) altermann.tex ; $(TEX) altermann.tex
+altermann.pdf : $(SRC).tex $(SRC).png coverart.jpg
+	$(TEX) $(SRC).tex ; $(TEX) $(SRC).tex
 

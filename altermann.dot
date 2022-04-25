@@ -5,8 +5,9 @@ digraph G {
   fontname="FiraSans,sans-serif";
   node [fontname="FiraSans,sans-serif" shape=hexagon style=rounded];
   edge [fontname="FiraSans,sans-serif" arrowhead=vee];
+  "Alter Mann" [fillcolor=lightgrey style=filled];
   "Alter Mann" -> Daniela [label="nicht interessiert" lhead=cluster_s1];
-  "Alter Mann" -> jemand  [label="nicht interessiert" lhead=cluster_s2];
+  "Alter Mann" -> jemand2 [label="nicht interessiert" lhead=cluster_s2];
   subgraph cluster_s1 {
     margin=32;
     color=black;
@@ -21,8 +22,8 @@ digraph G {
     Kevin                 -> {Jonas Lars Tim Tobias} [label="schwul" style="dotted"];
     Tobias                -> Annika                  [label="scharf auf"];
     Annika                -> Tobias                  [label="scharf auf"];
-    Annika                -> "Freundin von Annika"   [label="Freundin"];
-    "Freundin von Annika" -> Tobias                  [label="Schwarm"];
+    Annika                -> jemand1                 [label="Freundin"];
+    jemand1               -> Tobias                  [label="Schwarm"];
   }
   subgraph cluster_s2 {
     margin=32;
@@ -38,6 +39,6 @@ digraph G {
     Nils             -> Benjamin         [label="erstochen"];
     {Felix Thorsten} -> Nils             [label="abgemurkst"];
     Alexander        -> {Thorsten Felix} [label="killt"];
-    jemand           -> Alexander        [label="erschossen"];
+    jemand2          -> Alexander        [label="erschossen"];
   }
 }
